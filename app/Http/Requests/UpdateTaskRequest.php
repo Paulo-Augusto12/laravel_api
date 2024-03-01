@@ -1,17 +1,16 @@
 <?php
 
 namespace App\Http\Requests;
+use App\Http\Requests\StoreTaskRequest;
 
-use Illuminate\Foundation\Http\FormRequest;
-
-class UpdateTaskRequest extends FormRequest
+class UpdateTaskRequest extends StoreTaskRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +20,7 @@ class UpdateTaskRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+        return [    
         ];
     }
 }
