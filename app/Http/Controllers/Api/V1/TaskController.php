@@ -52,6 +52,8 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        $selectedTask = $task->find($task->id);
+        $selectedTask->delete();
+        return response()->json(null, 204);
     }
 }
