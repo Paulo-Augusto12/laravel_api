@@ -20,6 +20,8 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('/tasks', TaskController::class);
 });
 
+Route::put('/v1/tasks/{id}', [TaskController::class, 'update']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

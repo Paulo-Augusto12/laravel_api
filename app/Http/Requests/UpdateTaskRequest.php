@@ -20,7 +20,9 @@ class UpdateTaskRequest extends StoreTaskRequest
      */
     public function rules(): array
     {
-        return [    
+        return [
+            'id' => 'required|integer',
+            'name' => 'required|string|max:255',
         ];
     }
 }
